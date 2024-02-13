@@ -1,0 +1,161 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fae1dd;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+@keyframes up{
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Estilos para el sobre */
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f08080;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background-color: #f08080;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+
+/* Estilos para la tarjeta */
+.card {
+    position: absolute;
+    width: 270px;
+    height: 170px;
+    background-color: #eae2b7;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 140px;
+    border: 3px dotted #000000;
+    left: 12px;
+    top: 12px;
+}
+
+.text {
+    position: absolute;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height: 25px;
+    top: 19px;
+    left: 85px;
+    color: #000000;
+}
+
+/* Estilos para el corazón */
+.heart {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #a30707;
+    display: inline-block;
+    margin: 0 10px;
+    top: 110px;
+    left: 105px;
+    transform: rotate(-45deg);
+}
+
+.heart:before, .heart::after {
+    content: "";
+    position: absolute;
+    background-color: #a30707;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+/* Estilos para la parte delantera del sobre */
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 120px;
+    top: 5px;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    z-index: 10;
+}
+
+.front::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 300px solid #f8ad9d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+
+/* Estilos para la sombra */
+.shadow {
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+    top: 265px;
+    left: -15px;
+    z-index: -1;
+    animation: scale 3s linear infinite;
+}
+
+/* Animación de subida */
+@keyframes scale {
+    0%, 100% {
+        transform: translateX(1);
+    }
+    50% {
+        transform: translateX(0.85);
+    }
+}
